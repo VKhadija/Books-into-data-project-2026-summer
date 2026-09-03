@@ -1,25 +1,3 @@
-"""
-3_match_books.py
-
-Two jobs:
-1. Fuzzy-match extracted_books.csv (from shelf photos) against
-   goodreads_library.csv, so you know which physical books you've
-   already logged/rated on Goodreads.
-2. Enrich each book with publisher + publication year via the Open
-   Library API (free, no key needed) -- since neither the photos nor
-   the Goodreads DSAR export reliably give you that.
-
-Setup:
-    pip install -r requirements.txt
-
-Usage:
-    python 3_match_books.py
-
-Output:
-    library_final.csv     -- one row per unique book, merged + enriched
-    needs_review.csv      -- low-confidence matches / extractions to check by hand
-"""
-
 import csv
 import re
 import time
