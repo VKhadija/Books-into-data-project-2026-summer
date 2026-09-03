@@ -1,22 +1,3 @@
-"""
-1_export_goodreads.py
-
-Parses a Goodreads DSAR ("download my data") export and produces a clean
-CSV baseline of your library.
-
-Note: the DSAR export only contains title, rating, read_status, and
-timestamps -- no author, publisher, ISBN, or year. Those get filled in
-later, either from the shelf-photo extraction (3_match_books.py) or from
-a lookup API like Open Library.
-
-Usage:
-    python 1_export_goodreads.py path/to/Goodreads.zip
-    python 1_export_goodreads.py path/to/already_unzipped_folder
-
-Output:
-    goodreads_library.csv
-"""
-
 import csv
 import json
 import sys
