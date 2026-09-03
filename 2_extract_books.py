@@ -1,32 +1,3 @@
-"""
-2_extract_books.py
-
-Sends each shelf photo to Claude (vision) and asks for a structured list
-of every book spine/cover it can read: title, author, publisher (if
-visible), and a confidence label. Vision LLMs handle rotated spine text,
-decorative fonts, and cramped multi-book photos far better than
-traditional OCR (Tesseract/EasyOCR), which is why this uses the API
-instead.
-
-Setup:
-    pip install -r requirements.txt
-    export ANTHROPIC_API_KEY="sk-ant-..."
-
-Usage:
-    python 2_extract_books.py path/to/photos_folder
-
-Output:
-    extracted_books.jsonl   (one line per photo, raw results -- resumable)
-    extracted_books.csv     (flattened, one row per book)
-
-Notes:
-- Re-running the script skips photos already present in the .jsonl file,
-  so it's safe to stop and resume, or add new photos to the folder later.
-- Crop each photo down to a single shelf (not the whole bookcase) before
-  running this for best accuracy -- fewer spines per image means more
-  attention per spine.
-"""
-
 import base64
 import csv
 import json
